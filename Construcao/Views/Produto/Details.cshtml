@@ -1,0 +1,58 @@
+﻿@model Construcao.Models.Produto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do Produto</h1>
+
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pro_Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pro_Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pro_Desc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pro_Desc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QntEstoque)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QntEstoque)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Categorias)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Categorias.Cat_Nome)
+        </dd>
+    </dl>
+</div>
+
+<label asp-for="Categorias.Cat_Nome" class="form-control" disabled="disabled"/>
+<br/>
+<div class="input-group">
+    <span class="input-group-addon">
+        <i class="fade fa-user-circle-o" aria-hidden="true"></i>
+    </span>
+    <input asp-for="Categorias.Cat_Nome" class="form-control" disabled="disabled"/>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ProdutoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
